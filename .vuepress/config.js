@@ -19,7 +19,8 @@ module.exports = {
         sidebarDepth: 0,    // optional, defaults to 1
         children: [
 					'/',
-					'/project-structure/',
+          '/project-structure/',
+          '/project-structure/structure-comparison',
 					'/coding/',
 					'/common-tasks/',
         ]
