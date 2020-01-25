@@ -9,3 +9,13 @@ steps:
     commands:
       - npm i -g vuepress
       - vuepress build
+  
+  - name: release
+    image: plugins/docker
+    settings:
+      repo: registry.ubu-002.km8.es/into-phoenix
+      registry: registry.ubu-002.km8.es
+      username:
+        from_secret: docker_repo_user
+      password:
+        from_secret: docker_repo_password
