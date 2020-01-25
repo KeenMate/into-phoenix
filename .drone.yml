@@ -12,6 +12,9 @@ steps:
   
   - name: release
     image: plugins/docker
+    when:
+      branch:
+        - master
     settings:
       repo: registry.ubu-002.km8.es/into-phoenix
       registry: registry.ubu-002.km8.es
