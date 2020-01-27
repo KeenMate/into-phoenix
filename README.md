@@ -21,7 +21,7 @@ This example application called ShopToday will simulate product and order manage
 Basic technical parameters of the example application are these:
 - Single server application
   - For ASP.NET application we will use ASP.NET Core 3.x
-	- For Phoenix application we will use Phoenix 1.4.x
+  - For Phoenix application we will use Phoenix 1.4.x
 - Forms authentication
 - Server rendering of pages
 - Serving static content, for example Javascript files and images

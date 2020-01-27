@@ -3,7 +3,19 @@
 ## Principal differences
 Programming experience with Elixir/Phoenix is quite different than what you are used to in ASP.NET. The biggest difference is that there are no classes with their instances. We are pretty sure this will be the most confusing part of Elixir/Phoenix.
 
-Elixir is "mild" functional language, it's like a pipe where data flow from one side to another. Every data transformation you make will always create a copy of the original data. There are no value and reference types of function parameters. There are always pure data that you pass from one function to another, no function can change previous version of data, it can only create new version of it. (Technically this is not completely correct but you can think like this. And no need to worry, memory management is top notch in Elixir).
+Elixir is "mild" functional language, it's like a pipe where data flow from one side to another. Every data transformation you make will always create a copy of the original data. There are no value and reference types of function parameters. There are always pure data that you pass from one function to another, no function can change previous version of data, it can only create new version of it. (Technically this is not completely correct but you can think like this. And no need to worry, memory management is top notch in Elixir).  
+In Elixir classes are replaced with ``modules`` that you can understand as a no-state container of functions. In these modules you cannot have instance members like fields or properties, it would make no sense anyway because you cannot instantiate modules anyway.
+
+Phoenix comes with the same idea. All data of incoming request is taken as a single data package that is send through series of layers (endpoint, router, controller, view, template). Each layer can transform the data package, enrich it with addition information from which the last layer then produces some output.
+
+## Request processing
+Request processing of latest ASP.NET MVC/Core versions works with encapsulating middlewares that you define as a chain of layers that are called by the previous layer. System calls the first layer - ASP.NET itself - that prepares a data package known as HttpContext that has dozens of properties describing the request, it also contains form values for POST/PATCH/etc. requests, querystring and so on.  
+Depending on project setting property ``User`` is populated as well with current user.
+
+Request processing of requests in Phoenix is more similar to old HttpModules back in ASP.NET Forms days. Everything is based on Plugs. Plug is a simple module (with two predefined functions) or a simple function that is called for each request and it is used to transform/enrich/clean incoming data package similar to HttpContext and give it back to Phoenix framework, which then call another plug with modified data package.  
+Plugs are registered in router of the application or you can registred them in each controller.  
+  
+Remember plugs **do not** encapsulate each other. You cannot make for example MeasureRequestTime module that would encapsulate a request and all other layers would be measured by this module. You can however create a plug that puts timestamp to request http context at the beginning of the processing and then measure it with another plug at the end of processing request.
 
 ## Database communication
 Database communication in ASP.NET is done usually with Entity Framework and the example is also using it.
