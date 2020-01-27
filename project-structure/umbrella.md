@@ -1,8 +1,8 @@
-## What is the Umbrella application?
+# What is the Umbrella application?
 As we will move forward we will talk about something called ***umbrella application***. (This term is not related to the [Umbrella Corporation](https://residentevil.fandom.com/wiki/Umbrella_Corporation) in any way.😈)  
 So what is the Umbrella application? In Visual Studio terms you could consider the Umbrella application as ***Solution*** but it's not entirely the same thing. 
 
-### Differences and similarities
+## Differences and similarities
 
 |Area|Visual Studio Solution|Umbrella application|
 |---|---|---|

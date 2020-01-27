@@ -15,8 +15,8 @@ module.exports = {
       {
         title: 'Path to Victory',   // required
         path: '/',      // optional, which should be a absolute path.
-        collapsable: false, // optional, defaults to true
-        sidebarDepth: 0,    // optional, defaults to 1
+        collapsable: true, // optional, defaults to true
+        sidebarDepth: 2,    // optional, defaults to 1
         children: [
 					'/',
           ['/project-structure/', 'Main framework differences'],

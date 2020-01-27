@@ -1,7 +1,7 @@
-## Project structure
+# Project structure
 Elixir respectivelly Phoenix projects and ASP.NET Forms/MVC/Core are different but they share the same logic and the request processing philosophy.
 
-### The main differences
+## The main differences
 Phoenix and ASP.NET MVC/Core in basic aspects are not really that different. The main differences are named below but the main difference is that in Phoenix you get the bare minimum to make the web runnable but in ASP.NET MVC/Core you get a lot of stuff for free.
 
 - **Processes are not processes**  

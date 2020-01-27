@@ -1,1 +1,1 @@
-## Project structure comparison
+# Project structure comparison
