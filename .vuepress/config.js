@@ -1,6 +1,17 @@
+const autometa_options = {
+  author: {
+    name: 'Ondrej Valenta - Keenmate s.r.o.'
+  },
+  site: {
+    name   : 'intophoenix.io',
+    description: 'Into Phoenix will try to help you with your transformation from ASP.NET programmer to Elixir/Phoenix programmer'
+  },
+  canonical_base: 'https://intophoenix.io',
+};
+
 module.exports = {
   title: 'Into Phoenix',
-	description: 'A brief transition from ASP.NET Core to Phoenix',
+	description: 'Into Phoenix will try to help you with your transformation from ASP.NET programmer to Elixir/Phoenix programmer',
 	themeConfig: {
 		displayAllHeaders: true,
 		editLinkText: 'Edit this page on GitHub',
@@ -40,6 +51,12 @@ module.exports = {
     ]
 	},
 	plugins: [
-		['@vuepress/back-to-top', true],
+		[
+      '@vuepress/google-analytics',
+      {
+        'ga': 'UA-114157796-2'
+      }
+    ],
+    [ 'autometa', autometa_options ]
 	]
 }
