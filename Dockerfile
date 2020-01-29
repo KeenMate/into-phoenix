@@ -1,8 +1,4 @@
-FROM node:lts-alpine as vuepress-base
-RUN apk add g++ make python
-RUN npm install -g vuepress
-
-FROM vuepress-base as vuepress
+FROM registry.ubu-002.km8.es/vuepress-base:latest as vuepress
 ADD . /src
 RUN echo $'#!/bin/ash\n\
 npm ci && vuepress build\n' >> /build.sh

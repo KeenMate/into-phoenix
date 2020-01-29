@@ -5,10 +5,9 @@ name: default
 
 steps:
   - name: build
-    image: node:lts-alpine
+    image: registry.ubu-002.km8.es/vuepress-base:latest
     commands:
       - npm ci
-      - npm i -g vuepress
       - vuepress build
   
   - name: release
