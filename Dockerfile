@@ -1,11 +1,11 @@
 FROM node:lts-alpine as vuepress-base
+RUN apk add g++ make python
 RUN npm install -g vuepress
 
 FROM vuepress-base as vuepress
 ADD . /src
 RUN echo $'#!/bin/ash\n\
-npm ci\n\
-vuepress build\n' >> /build.sh
+npm ci && vuepress build\n' >> /build.sh
 CMD ["/build.sh"]
 
 FROM abiosoft/caddy:no-stats
