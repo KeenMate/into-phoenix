@@ -7,7 +7,7 @@ steps:
   - name: build
     image: node:lts-alpine
     commands:
-      - npm i
+      - npm ci
       - npm i -g vuepress
       - vuepress build
   
