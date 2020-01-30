@@ -1,6 +1,6 @@
 const autometa_options = {
   author: {
-    name: 'Ondrej Valenta - Keenmate s.r.o.'
+    name: 'Ondrej Valenta'
   },
   site: {
     name   : 'intophoenix.io',
@@ -57,6 +57,7 @@ module.exports = {
         'ga': 'UA-114157796-2'
       }
     ],
-    [ 'autometa', autometa_options ]
+    [ 'autometa', autometa_options ],
+    ['flowchart']
 	]
 }
