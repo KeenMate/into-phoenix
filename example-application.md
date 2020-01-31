@@ -77,4 +77,7 @@ Right content block contains list of top 7 movies, based amount of rents, to be 
 Displays information about how many other users is currently online, what movies user has still rented and a list of cards of most popular movie in each movie category.
 
 ### List of movies with filtering and paging
-Displays a list of cards of movies. 
+Displays a list of cards of movies. They can be filtered by movie category and actor. Filter options are put in querystring so users can send links to other users.
+Movies list is also paged and page options like page size and page number are also put in querystring.
+
+### Detail screen for each movie with rent history
