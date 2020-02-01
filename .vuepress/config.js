@@ -42,9 +42,10 @@ module.exports = {
 				title: "Path to Victory", // required
 				// path: "/", // optional, which should be a absolute path.
 				collapsable: true, // optional, defaults to true
-				sidebarDepth: 2, // optional, defaults to 1
+				sidebarDepth: 1, // optional, defaults to 1
 				children: [
 					// "/",
+					["/example-application", "Example application"],
 					["/project-structure/", "Main framework differences"],
 					["/project-structure/umbrella", "Umbrella application"],
 					"/project-structure/new-project",
