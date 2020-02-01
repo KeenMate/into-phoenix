@@ -64,7 +64,7 @@ On second tab of this page there is a list with rental history of the displayed 
 An order button is displayed on this page only if it's available to rent (calculated on server) AND user is logged in. On pressing this button [PRG](https://en.wikipedia.org/wiki/Post/Redirect/Get) is send to server where the film is added to user's basket. User is then redirected back to film detail page. When the the film is in user's basket a message is displayed on this page saying "You already have this film in your shopping basket".
 
 ### Login screen
-Standard username/password login page. PRG to home screen on login.
+Standard login name/password login page. PRG to home screen on login.
 
 ### Basket
 List of films order by name stored in the user's session. User can remove film from the basket or clear it completely with a single button "Clear basket". List of films contains sums of total rental price (calculated and rendered on server).  
@@ -97,7 +97,24 @@ On third tab called Profile maintenance user can request complete removal of his
 Administration runs on admin subdomain and in a separate application. It is a SPA application that calls endpoints in background server application. SPA assets are downloaded from the background application. Administration is accessible only for logged in users with administrator role - represented as being a member of ``staff`` table. Authentication is simply done with login name and password and a secure token is stored to cookies with ``same-site`` and ``http-only`` property.
 
 ### Administration - Login page
-Simple 
+Standard login name/password login page. PRG to home screen of the administration on login.
+
+### Home screen with dashboard and charts for top rented films, top categories and so on
+Dashboarded home screen displays four charts that are loaded separately. Administrator can pick from/to dates that are used to filter and calculate data from date pickers.
+Four charts are these:
+- [Horizontal bar] Top 10 rented movie based on amount of rentals, displays a movie title, total rents and color based on movie category
+- [Horizontal bar] Top 10 renters, displays user's full name in format ``"[Last name], [Firstname]"``
+- [Line chart] Total amount of rentals based on days (devided to quarters per 8 hours)
+- [Pie chart] Total amount of rentals per category, only category with more than 2 rentals are shown 
+### List of films with filtering and paging
+
+### Detail screen for each film with rent history, stock availability, active rents
+### List of users with filtering and paging
+### Detail screen for each user with rent history, enable/disable buttons and options to reset user's password
+### List of rents with options to cancel a rented video record
+
+
+
 
 ## Technical description
 

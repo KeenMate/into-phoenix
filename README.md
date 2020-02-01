@@ -3,7 +3,7 @@ home: true
 heroText: Into Phoenix
 heroImage: /phoenix-logo.svg
 tagline: From ASP.NET Developer to Knight of the Order of the Phoenix!
-actionText: Become a knight →
+actionText: Start your journey →
 actionLink: ./guide.md
 features:
   - title: From programmers to programmers
