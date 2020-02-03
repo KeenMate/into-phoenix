@@ -17,6 +17,8 @@ module.exports = {
 		"Into Phoenix is written by programmers for programmers to help them with their transition from an ASP.NET programmer to Elixir/Phoenix knight",
 	themeConfig: {
 		displayAllHeaders: true,
+		repo: 'KeenMate/into-phoenix',
+		editLinks: true,
 		editLinkText: "Edit this page on GitHub",
 		lastUpdated: "Last Updated",
 		nav: [
@@ -64,6 +66,7 @@ module.exports = {
 		]
 	},
 	plugins: [
+		['@vuepress/back-to-top', true],
 		[
 			"@vuepress/google-analytics",
 			{
