@@ -11,7 +11,7 @@ The Umbrella application in Visual Studio terms you could consider the Umbrella 
 |Projects manipulation|You can only add files like ``.csproj`` to solution which will consequently add all files mentioned in the project file to the solution. To remove the project you simple remove the reference to that project in the solution. It will remove the project from solution but not from disk.|To add new application into the umbrella application you have to go to ``apps`` folder, create new application using ``mix`` command line utility and add this application to main ``mix.exs`` file as another application to run|
 |Startup|In solution you can setup a single or multiple projects to be started when you press F5 (Build and run). Solution itself produces no output.|You can start both a single application or whole umbrella application with ``mix phx.server`` from your command line.|
 
-## How to create an Umbrella application?
+## Creating an Umbrella
 
 In order to create an Umbrella application we are going to use the ``mix phx.new`` command with the ``--umbrella`` switch. To create new project for project named ``rent_today`` we'd run this:  
 ```
