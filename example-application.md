@@ -20,7 +20,7 @@ tags:
 
 ## Summary
 
-RentToday is based on [Pagila](https://github.com/devrimgunduz/pagila) database that is a port of [Sakila](https://dev.mysql.com/doc/sakila/en/) for Postgres.
+RentToday application is based on [RentToday](https://github.com/KeenMate/renttoday-database) database that is a port of [Sakila](https://dev.mysql.com/doc/sakila/en/) for Postgres.
 
 We won't use all tables in this database as we will not cover all aspects of video renting services but we will use some of tables, views and stored procedures.
 
