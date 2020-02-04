@@ -44,12 +44,12 @@ We won't use all tables in this database as we will not cover all aspects of vid
 Frontend layout is based on simple structure: navigation bar, content block and footer. Content block is divided into two columns. 80/20%.
 
 Top navigation bar with current user name displayed in right top corner, if user is not logged in *Log in* text is displayed instead, when user is logged in there is an exit icon to log user out next to the user's name.  
-Navigation menu is position in top left corner. Basket is displayed only for logged in user and its position on left side of the user's name.
+Navigation menu is positioned in top left corner. Basket is displayed only for logged in user and its position on left side of the user's name.
 
 Right content block contains list of top 7 films, based amount of rents, to be rented. This block is displayed on every page. 
 
 ### Home screen
-Displays information about how many other users is currently online, what films user has still rented and a list of cards of most popular film in each film category.
+Displays information about how many other users are currently online, what films user has still rented and a list of cards of most popular film in each film category.
 
 ### List of films with filtering and paging
 Displays a list of cards of films. They can be filtered by film category and actor. Filter options are put in querystring so users can send links to other users. User can also use fulltext search for film names via search textbox. Search filter is also put in querystring. If no films are found a message "We are sorry. There are no films matching your criteria." is displayed between header and footer of the film list.
@@ -61,18 +61,18 @@ Rental rate and cost of replacemenant are also displayed.
   
 On second tab of this page there is a list with rental history of the displayed movie in a paged manner, ordered by rental day (newest on top). Page size is 10, fixed. Page number is put to querystring. List of rentals contains date of rental in format ``YYYY-MM-DD"`` and name of user who rented the film in format ``"[First character of last name, capitalized]*, [Firstname]"`` to anonymize user names.
 
-An order button is displayed on this page only if it's available to rent (calculated on server) AND user is logged in. On pressing this button [PRG](https://en.wikipedia.org/wiki/Post/Redirect/Get) is send to server where the film is added to user's basket. User is then redirected back to film detail page. When the the film is in user's basket a message is displayed on this page saying "You already have this film in your shopping basket".
+An order button is displayed on this page only if it's available to rent (calculated on server) AND user is logged in. On pressing this button [PRG](https://en.wikipedia.org/wiki/Post/Redirect/Get) is sent to server where the film is added to user's basket. User is then redirected back to film detail page. When the the film is in user's basket a message is displayed on this page saying "You already have this film in your shopping basket".
 
 ### Login screen
 Standard login name/password login page. PRG to home screen on login.
 
 ### Basket
-List of films order by name stored in the user's session. User can remove film from the basket or clear it completely with a single button "Clear basket". List of films contains sums of total rental price (calculated and rendered on server).  
+List of films ordered by name stored in the user's session. User can remove film from the basket or clear it completely with a single button "Clear basket". List of films contains sums of total rental price (calculated and rendered on server).  
   
-On pressing "Rent" button there PRG request to server. Request is processed this way:
+On pressing "Rent" button PRG request is made against server. Request is processed this way:
 - All films to be rented are checked against database to confirm availability of them
   - If all films are available they are rented to the user
-  - If any of the films is not available anymore server redirects user back to the basket where those films that are not avaiable are displayed red and a message is displayed to the user saying "We are sorry! Films in red are not available to rent anymore. Please, try it later"
+  - If any of the films are not available anymore server redirects user back to the basket where those films that are not avaiable are displayed red and a message is displayed to the user saying "We are sorry! Films in red are not available to rent anymore. Please, try it later"
 - When films are rented basket content in user session is cleared
 - To rent a film to user means to put a record to ``rental`` table 
 
