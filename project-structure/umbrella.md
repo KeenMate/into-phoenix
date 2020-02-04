@@ -13,7 +13,7 @@ The Umbrella application in Visual Studio terms you could consider the Umbrella 
 
 ## Creating an Umbrella
 
-In order to create an Umbrella application we are going to use the ``mix phx.new`` command with the ``--umbrella`` switch. To create new project for project named ``rent_today`` we'd run this:  
+In order to create an Umbrella application we are going to use the ``mix phx.new`` command with the ``--umbrella`` switch. To create new project for project named ``rent_today`` we would run this:  
 ```
 mix phx.new --umbrella rent_today
 ```
