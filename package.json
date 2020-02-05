@@ -12,5 +12,8 @@
   },
   "dependencies": {
     "vuepress-plugin-sitemap": "^2.3.1"
+  },
+  "scripts": {
+    "dev": "vuepress dev"
   }
 }

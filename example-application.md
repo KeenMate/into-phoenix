@@ -20,7 +20,7 @@ tags:
 
 ## Summary
 
-RentToday is based on [Pagila](https://github.com/devrimgunduz/pagila) database that is a port of [Sakila](https://dev.mysql.com/doc/sakila/en/) for Postgres.
+RentToday application is based on [RentToday](https://github.com/KeenMate/renttoday-database) database that is a port of [Sakila](https://dev.mysql.com/doc/sakila/en/) for Postgres.
 
 We won't use all tables in this database as we will not cover all aspects of video renting services but we will use some of tables, views and stored procedures.
 
@@ -87,18 +87,18 @@ On pressing "Rent" button PRG request is made against server. Request is process
 
 User profile has three tabs.
 
-- On first tab called User details user can update his/her details (first and last name), email is displayed but cannot be changed and serves as a login name.  
+1. On first tab called User details user can update his/her details (first and last name), email is displayed but cannot be changed and serves as a login name.  
   Address can be changed as well.
-- Address line (there are two), district and postal code are simple texts
-- Cities are displayed in combo box(rendered on server)
+    1. Address line (there are two), district and postal code are simple texts
+    2. Cities are displayed in combo box(rendered on server)
 
-  - When user selects a city a postback is send to server which displays city country and keeps all edited or saved data, which ever is the case for given field
+      1. When user selects a city a postback is send to server which displays city country and keeps all edited or saved data, which ever is the case for given field
 
-User can save his/her profile by pressing "Save my details" button.
+    User can save his/her profile by pressing "Save my details" button.
 
-On second tab called rental history user can see his/her rental history. List of rentals also show total amount of rentals and total price for all rentals displayed in footer. User can filter rentals of films by fulltext search of their title. List of rentals is also paged by 20. All requests are done as pure postbacks.
+2. On second tab called rental history user can see his/her rental history. List of rentals also show total amount of rentals and total price for all rentals displayed in footer. User can filter rentals of films by fulltext search of their title. List of rentals is also paged by 20. All requests are done as pure postbacks.
 
-On third tab called Profile maintenance user can request complete removal of his/her profile and data from database. When user is presses "Remove my profile" button user is redirect to a confirmation page with message "Are you sure to remove this profile?". By pressing yes, user data, those that are not important for invoincing and accounting, are removed from the database and user is logged out.
+3. On third tab called Profile maintenance user can request complete removal of his/her profile and data from database. When user is presses "Remove my profile" button user is redirect to a confirmation page with message "Are you sure to remove this profile?". By pressing yes, user data, those that are not important for invoincing and accounting, are removed from the database and user is logged out.
 
 ### Administration
 
