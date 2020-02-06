@@ -65,12 +65,12 @@ Rental rate and cost of replacemenant are also displayed.
 
 On second tab of this page there is a list with rental history of the displayed movie in a paged manner, ordered by rental day (newest on top). Page size is 10, fixed. Page number is put to querystring. List of rentals contains date of rental in format `YYYY-MM-DD"` and name of user who rented the film in format `"[First character of last name, capitalized]*, [Firstname]"` to anonymize user names.
 
-An order button is displayed on this page only if it's available to rent (calculated on server) AND user is logged in. On pressing this button [PRG](https://en.wikipedia.org/wiki/Post/Redirect/Get) is sent to server where the film is added to user's basket. User is then redirected back to film detail page. When the the film is in user's basket a message is displayed on this page saying "You already have this film in your shopping basket".
+An order button: "Add to basket" is displayed on this page only if it's available to rent (calculated on server) AND user is logged in. On pressing this button [PRG](https://en.wikipedia.org/wiki/Post/Redirect/Get) is sent to server where the film is added to user's basket. User is then redirected back to film detail page. When the the film is in user's basket a message is displayed on this page saying "You already have this film in your shopping basket".
 
 ### Login screen
 
 Standard login name/password login page. PRG to home screen on login.
-
+	
 ### Basket
 
 List of films order by name stored in the user's session. User can remove film from the basket or clear it completely with a single button "Clear basket". List of films contains sums of total rental price (calculated and rendered on server).
