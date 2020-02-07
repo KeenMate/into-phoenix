@@ -63,7 +63,7 @@ Film list is also paged and page options like page size and page number are also
 Displays a film details like Title, Description, it's category, length in hours (computed on server from minutes), rating, special features and year of release.  
 Rental rate and cost of replacemenant are also displayed.
 
-On second tab of this page there is a list with rental history of the displayed movie in a paged manner, ordered by rental day (newest on top). Page size is 10, fixed. Page number is put to querystring. List of rentals contains date of rental in format `YYYY-MM-DD"` and name of user who rented the film in format `"[First character of last name, capitalized]*, [Firstname]"` to anonymize user names.
+On second tab of this page there is a list with rental history of the displayed movie in a paged manner, ordered by rental day (newest on top). Page size is 10, fixed. Page number is put to querystring. List of rentals contains date of rental in format `"YYYY-MM-DD"` and name of user who rented the film in format `"[First character of last name, capitalized]*, [Firstname]"` to anonymize user names.
 
 An order button: "Add to basket" is displayed on this page only if it's available to rent (calculated on server) AND user is logged in. On pressing this button [PRG](https://en.wikipedia.org/wiki/Post/Redirect/Get) is sent to server where the film is added to user's basket. User is then redirected back to film detail page. When the the film is in user's basket a message is displayed on this page saying "You already have this film in your shopping basket".
 
@@ -98,7 +98,7 @@ User profile has three tabs.
 
 2. On second tab called rental history user can see his/her rental history. List of rentals also show total amount of rentals and total price for all rentals displayed in footer. User can filter rentals of films by fulltext search of their title. List of rentals is also paged by 20. All requests are done as pure postbacks.
 
-3. On third tab called Profile maintenance user can request complete removal of his/her profile and data from database. When user is presses "Remove my profile" button user is redirect to a confirmation page with message "Are you sure to remove this profile?". By pressing yes, user data, those that are not important for invoincing and accounting, are removed from the database and user is logged out.
+3. On third tab called Profile maintenance user can request complete removal of his/her profile and data from database. When user presses "Remove my profile" button user is redirect to a confirmation page with message "Are you sure to remove this profile?". By pressing yes, user data, those that are not important for invoicing and accounting, are removed from the database and user is logged out.
 
 ### Administration
 
