@@ -1,4 +1,4 @@
-FROM registry.ubu-002.km8.es/vuepress-base:latest as vuepress
+FROM registry.km8.es/vuepress-base:latest as vuepress
 ADD . /src
 RUN echo $'#!/bin/ash\n\
 npm ci && vuepress build\n' >> /build.sh
