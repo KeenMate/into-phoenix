@@ -5,7 +5,7 @@ name: default
 
 steps:
   - name: build
-    image: registry.ubu-002.km8.es/vuepress-base:latest
+    image: registry.km8.es/vuepress-base:latest
     commands:
       - npm ci
       - vuepress build
@@ -16,8 +16,8 @@ steps:
       branch:
         - master
     settings:
-      repo: registry.ubu-002.km8.es/into-phoenix
-      registry: registry.ubu-002.km8.es
+      repo: registry.km8.es/into-phoenix
+      registry: registry.km8.es
       username:
         from_secret: docker_repo_user
       password:
