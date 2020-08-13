@@ -26,7 +26,7 @@ steps:
   - name: deploy
     image: appleboy/drone-ssh
     settings:
-      host: web-01.km8.es
+      host: 10.0.0.7
       port: 22
       username:
         from_secret: web-01_ssh_user
