@@ -60,7 +60,54 @@ Database communication in Elixir/Phoenix is done with [Ecto](https://hexdocs.pm/
 
 ## Forms
 
-## Sessions and cookies
+## Cookies
+
+## Session
+
+When creating a new project, Phoenix uses cookies as the default session store. While you definitely can use cookies as a session store, it has its pros and cons that we will discuss in this section. We will also look at other session store options you can use in your project.
+
+Sessions in Phoenix are actually handled by `Plug.Session` ([link](https://hexdocs.pm/plug/Plug.Session.html)) and not by the Phoenix framework itself. As session is handled by a plug, you can configure it in `endpoint.ex` file under the `Plug.Session` definition.
+
+The `Plug.Session` module ships with two session store options - cookie and ETS-backed ones. We'll also look at an external Redis-backed one as well.
+
+### Cookie storage
+
+### ETS storage
+
+### Redis storage
+
+For Redis-backed sessions we're going to use `Redbird` ((GitHub link)[https://github.com/thoughtbot/redbird]). This module provides separate session store implementation that we can just plug into our application. This is useful especially if we already use Redis as a cache. However keep in mind that Redis connection might add additional latency to your requests if you don't host your Redis server locally.
+
+After adding `:redbird` as a dependency, we have to configure `Plug.Session` to use `Redbird` as its session store. In `endpoint.ex` we replace `Plug.Session` config with the following:
+
+```
+plug Plug.Session,
+  store: :redis,
+  key: "_renttoday_web",
+  expiration_in_seconds: 3000 # Optional - default is 30 days
+```
+
+Next we need to configure global key namespace for our project, so we add this to `config.exs`:
+
+```
+config :redbird, key_namespace: "renttoday_"
+```
+
+Redis is a key-value storage and the key the store is going to use is going to be composed of the key configured for the specific endpoint plug, global key namespace and user's session key that's been generate for his session.
+
+The last thing needed is to configure the Redis server connection. The connection is actually handled by a different module - `exredis` (check out its (GitHub)[https://github.com/artemeff/redis/tree/exredis] for more configuration options). We add the connection to `config.exs` as well:
+
+```
+config :exredis,
+  host: "redis",
+  port: 6379,
+  password: "pass",
+  db: 0,
+  reconnect: :no_reconnect,
+  max_queue: :infinity
+```
+
+With this, our application should use Redis as a session store.
 
 ## Data APIs
 
