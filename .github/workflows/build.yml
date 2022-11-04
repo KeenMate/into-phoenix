@@ -1,0 +1,13 @@
+name: Production build
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    uses: KeenMate/gha-shared/.github/workflows/deploy-docker-image.yml@master
+    secrets: inherit
+    with:
+      image-name: into-phoenix
+      deployment-host: web-01.km8.vm
+      deployment-dir: into-phoenix
